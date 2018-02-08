@@ -10,7 +10,7 @@ public class User {
     public User(Long id, String userName, String password) {
         this.id = id;
         this.userName = userName;
-        this.password = password;
+        this.password = passWord;
     }
 
 
