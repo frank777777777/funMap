@@ -1,9 +1,12 @@
-package me.funmap.dao.interfaces;
+package me.funmap.dao;
 
 import me.funmap.model.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 public interface UserMapper {
 

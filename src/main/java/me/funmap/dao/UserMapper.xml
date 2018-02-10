@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace：此时用mapper代理方式，它的值必须等于对应mapper接口的全限定名  -->
+<mapper namespace="me.funmap.dao.UserMapper">
+    <resultMap id="userMap" type="User">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="pass_word" property="passWord" />
+    </resultMap>
+
+
+   <!--get a User by id-->
+    <select id="getUser" resultMap="userMap">
+        SELECT * FROM User WHERE id = #{id}
+    </select>
+
+
+   <!--get all Users-->
+    <select id="getAll" resultMap="userMap">
+        SELECT * FROM funmap.User
+    </select>
+
+    <!--register a new user-->
+    <insert id="registerUser"  parameterType="User">
+        INSERT INTO User(id,user_name,pass_word) VALUES (#{user.id},#{user.userName},#{user.passWord})
+    </insert>
+
+   <!--&lt;!&ndash;update a current user &ndash;&gt;-->
+   <update id="updateUser" parameterType="User">
+       UPDATE User
+          SET user_name = #{user.userName}, pass_word = #{user.passWord}
+          WHERE id = #{user.id}
+   </update>
+
+    <delete id="deleteUser">
+        DELETE FROM User
+          WHERE id = #{id}
+    </delete>
+
+    <select id="searchUser" resultMap="userMap">
+        SELECT * FROM User WHERE User.user_name LIKE concat('%', #{token}, '%')
+    </select>
+
+</mapper>

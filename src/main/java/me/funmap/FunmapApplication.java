@@ -14,16 +14,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-@MappedTypes(User.class)
-@MapperScan("me.funmap.mapper")
+
 @SpringBootApplication
+@MapperScan("me.funmap.dao")
 public class FunmapApplication {
 
-
-	public FunmapApplication() throws IOException {
-	}
-
 	public static void main(String[] args) {
+
+		System.out.println(System.getProperty("java.class.path"));
+
 		SpringApplication.run(FunmapApplication.class, args);
 	}
 }

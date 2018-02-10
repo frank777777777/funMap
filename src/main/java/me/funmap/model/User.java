@@ -1,16 +1,17 @@
 package me.funmap.model;
 
-import org.apache.ibatis.type.JdbcType;
 
 public class User {
     private Long id;
     private String userName;
-    private String password;
+    private String passWord;
 
-    public User(Long id, String userName, String password) {
+    protected User(){}
+
+    public User(Long id, String userName, String passWord) {
         this.id = id;
         this.userName = userName;
-        this.password = passWord;
+        this.passWord = passWord;
     }
 
 
@@ -23,20 +24,20 @@ public class User {
 
     }
 
-    public String getUserName() {
+    public String getuserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public void setuserName(String userName) {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getpassWord() {
+        return passWord;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setpassWord(String passWord) {
+        this.passWord = passWord;
     }
 
 
