@@ -1,4 +1,4 @@
-package me.funmap.service.impl;
+package me.funmap.service.interfaces;
 
 import me.funmap.model.User;
 

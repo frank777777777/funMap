@@ -1,8 +1,9 @@
 package me.funmap.controller;
 
 import me.funmap.model.User;
-import me.funmap.service.impl.UserSV;
+import me.funmap.service.interfaces.UserSV;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -38,17 +39,16 @@ public class UserController {
     }
 
     @PostMapping("/")
+    @Transactional
     public void registerUser(@RequestBody User user){
         userService.registerUser(user);
-        ServletUriComponentsBuilder bd = ServletUriComponentsBuilder.fromCurrentContextPath();
-
+        int j = 1 / 0;
     }
 
     @PutMapping("/")
     public void updateUser(@RequestBody User user){
         userService.updateUser(user);
     }
-
 
 
 }

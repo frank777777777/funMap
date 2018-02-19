@@ -9,12 +9,13 @@ import org.apache.ibatis.type.MappedTypes;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 
-
+@EnableTransactionManagement
 @SpringBootApplication
 @MapperScan("me.funmap.dao")
 public class FunmapApplication {
